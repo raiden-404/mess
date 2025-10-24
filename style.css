@@ -1,0 +1,438 @@
+/* Basic Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    min-height: 100vh; /* Ensure body takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Status Bar (just like the previous one, slightly adjusted for current image) */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    background-color: #fff;
+    /* border-bottom: 1px solid #eee; */ /* Removed based on current image */
+    color: #555; /* Lighter text color */
+}
+
+.status-left, .status-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.status-bar .fa-wifi, .status-bar .fa-bluetooth-b, .status-bar .fa-signal, .status-bar .fa-battery-full {
+    color: #555;
+}
+
+
+/* Top Bar (Hamburger, Meesho Logo, Heart, Cart) */
+.top-bar-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-left-product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.meesho-logo {
+    height: 25px; /* Adjust logo height as needed */
+    object-fit: contain;
+}
+.meesho-logo[alt="Meesho Logo"] {
+    /* Style for the placeholder, adjust as needed */
+    background-color: #ff3366; /* Meesho's brand color */
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Georgia', serif; /* Or a custom font */
+}
+
+
+.top-right-product {
+    display: flex;
+    gap: 20px;
+    font-size: 1.3rem;
+    color: #555;
+}
+
+/* Search Section */
+.search-section-product {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin: 0 10px; /* No top margin as it's directly below the header */
+    padding: 8px 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.search-section-product i {
+    color: #888;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.search-section-product input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 5px 0;
+}
+
+.search-section-product input::placeholder {
+    color: #aaa;
+}
+
+/* Delivery Location Bar */
+.delivery-location-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #4CAF50; /* Greenish color */
+    border-bottom: 1px solid #eee;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.delivery-location-bar i:first-child { /* Map marker */
+    font-size: 1rem;
+}
+
+.delivery-location-bar span {
+    flex-grow: 1;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+.delivery-location-bar .fa-chevron-right {
+    font-size: 0.6rem; /* Smaller arrows */
+    margin-left: -2px; /* Pull them closer */
+    color: #777; /* Lighter color for arrows */
+}
+
+/* Horizontal Categories Scroll */
+.horizontal-categories {
+    background-color: #fff;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    white-space: nowrap; /* Prevent items from wrapping */
+}
+
+.category-scroll-wrapper {
+    display: flex;
+    gap: 15px; /* Spacing between items */
+    padding: 0 10px; /* Padding on ends for scrolling effect */
+}
+
+.h-category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #555;
+    flex-shrink: 0; /* Prevent items from shrinking */
+    width: 70px; /* Fixed width for each item */
+}
+
+.h-category-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: #e1369d;
+}
+.h-category-icon-box.blue { background-color: #dd39e9; } /* Example blue */
+/* Add more colors as needed */
+
+.h-category-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border: 1px solid #eee;
+}
+
+/* Products For You Heading */
+.products-for-you-heading {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 10px 5px;
+    background-color: #f0f2f5; /* Match body background */
+}
+
+/* Filter Bar */
+.filter-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 5px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-right: 1px solid #eee; /* Separator */
+    flex: 1; /* Distribute space evenly */
+    justify-content: center;
+}
+
+.filter-item:last-child {
+    border-right: none; /* No separator for the last item */
+}
+
+.filter-item.filter-right {
+    justify-content: flex-end; /* Align "Filters" to the right if needed */
+    padding-right: 10px;
+}
+.filter-item.filter-right i {
+    margin-right: 5px;
+}
+
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 10px 70px; /* Padding at bottom for fixed nav */
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Stack image and details */
+    border: #ff3366;
+    width: 45%;
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    /* Maintain aspect ratio if possible, e.g., using padding-bottom hack */
+    /* padding-bottom: 138.8%; /* (250/180) * 100 - if image is 180x250 */
+    /* height: 0; */
+    /* For simplicity, we'll use object-fit for now */
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency on mobile */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.3rem;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0,0,0,0.5); /* Make it visible against various images */
+}
+
+.product-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows details to take available space */
+}
+
+.product-title {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-price .offer {
+    color: #4CAF50; /* Green for offers */
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.free-delivery {
+    font-size: 0.75rem;
+    color: #4CAF50; /* Green for free delivery */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: auto; /* Pushes rating to the bottom */
+}
+
+.rating-badge {
+    background-color: #4CAF50; /* Green badge */
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.rating-badge .fa-star {
+    font-size: 0.7rem;
+}
+
+.reviews {
+    color: #888;
+}
+
+
+/* Bottom Navigation (Fixed) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    padding: 8px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #777;
+    text-decoration: none;
+    padding: 5px;
+    flex: 1; /* Distribute space evenly */
+}
+
+.nav-item i {
+    font-size: 1.3rem;
+    margin-bottom: 3px;
+}
+
+.nav-item.active {
+    color: #ff3366; /* Meesho's primary active color */
+}
+
+.nav-item.active i {
+    color: #ff3366;
+}
+
+/* Responsive Adjustments for Larger Screens (Tablets/Desktops) */
+@media (min-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for products */
+        padding: 0 20px 70px; /* More padding on wider screens */
+        max-width: 900px; /* Limit overall width */
+        margin: 0 auto; /* Center the grid */
+    }
+
+    .search-section-product,
+    .delivery-location-bar,
+    .horizontal-categories,
+    .products-for-you-heading,
+    .filter-bar {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .search-section-product {
+        margin-bottom: 10px;
+    }
+
+    .top-bar-product {
+         max-width: 900px;
+         margin-left: auto;
+         margin-right: auto;
+         padding-left: 20px;
+         padding-right: 20px;
+         border-radius: 8px 8px 0 0; /* Rounded top corners for header */
+    }
+
+    .product-card {
+        margin-bottom: 0; /* Grid handles spacing */
+    }
+}
+
+@media (min-width: 900px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns for products on larger screens */
+    }
+}
